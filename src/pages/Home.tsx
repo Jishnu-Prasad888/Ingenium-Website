@@ -5,13 +5,6 @@ import { images } from "../utils/images";
 const HomePage = () => {
   const [isDownloadModalOpen, setDownloadModalOpen] = useState(false);
   const [activeFeature, setActiveFeature] = useState("offline");
-  const shareText =
-    "Found a great app that lets you organize your notes offline! h";
-  const appUrl = "https://google.com"; // replace with your site URL
-  const linkedInShareUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(
-    appUrl
-  )}`;
-
   const features = [
     {
       id: "offline",

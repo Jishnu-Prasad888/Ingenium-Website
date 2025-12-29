@@ -182,7 +182,7 @@ const ImageViewer: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 p-4 sm:p-6 lg:p-8">
+    <div className="min-h-screen bg-linear-to-br from-gray-50 to-gray-100 p-4 sm:p-6 lg:p-8">
       <div className="max-w-7xl mx-auto">
         <h1 className="text-3xl sm:text-4xl lg:text-5xl font-serif4 text-gray-800 mb-8 text-center">
           Spotlight on Screens{" "}
@@ -198,7 +198,7 @@ const ImageViewer: React.FC = () => {
               onClick={() => openModal(index)}
             >
               {imageErrors[image.id] ? (
-                <div className="w-full aspect-[3/4] flex flex-col items-center justify-center bg-gray-300 text-gray-600">
+                <div className="w-full aspect-3/4 flex flex-col items-center justify-center bg-gray-300 text-gray-600">
                   <ImageIcon className="w-12 h-12 mb-2" />
                   <p className="text-sm">{image.alt}</p>
                   <p className="text-xs text-gray-500 mt-1">Image not found</p>
@@ -206,7 +206,7 @@ const ImageViewer: React.FC = () => {
               ) : (
                 <>
                   {!imageLoaded[image.id] && (
-                    <div className="w-full aspect-[3/4] flex items-center justify-center bg-gray-200 animate-pulse">
+                    <div className="w-full aspect-3/4 flex items-center justify-center bg-gray-200 animate-pulse">
                       <ImageIcon className="w-12 h-12 text-gray-400" />
                     </div>
                   )}

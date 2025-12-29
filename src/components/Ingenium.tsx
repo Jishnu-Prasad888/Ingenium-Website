@@ -21,65 +21,15 @@ import {
 } from "lucide-react";
 
 type Screen = "home" | "note-view" | "note-preview" | "folder";
-type SortBy = "date" | "name" | "modified";
-
-interface Note {
-  id: string;
-  title: string;
-  date: string;
-  preview: string;
-  folder: string;
-}
-
-interface Folder {
-  id: string;
-  name: string;
-  created: string;
-  parent: string;
-}
 
 const App: React.FC = () => {
   const [currentScreen, setCurrentScreen] = useState<Screen>("home");
-  const [selectedNote, setSelectedNote] = useState<string | null>(null);
-  const [selectedFolder, setSelectedFolder] = useState<string>("/");
+  const [, setSelectedNote] = useState<string | null>(null);
+  const [, setSelectedFolder] = useState<string>("/");
   const [showNotesList, setShowNotesList] = useState(true);
   const [showFoldersList, setShowFoldersList] = useState(true);
   const [showPreview, setShowPreview] = useState(false);
   const [open, setOpen] = useState(false);
-
-  const notes: Note[] = [
-    {
-      id: "1",
-      title: "Untitled Note",
-      date: "27/12/2025",
-      preview: "# Obsidian Feature Test Document...",
-      folder: "/",
-    },
-    {
-      id: "2",
-      title: "My first note",
-      date: "27/12/2025",
-      preview: "# Markdown Renderer Full Test Document",
-      folder: "/",
-    },
-    {
-      id: "3",
-      title: "Hello",
-      date: "27/12/2025",
-      preview: "## Hello",
-      folder: "/",
-    },
-  ];
-
-  const folders: Folder[] = [
-    { id: "folder1", name: "Folder 1", created: "12/27/2025", parent: "/" },
-    {
-      id: "folder2",
-      name: "Folder 2",
-      created: "12/28/2025",
-      parent: "folder1",
-    },
-  ];
 
   const handleNoteClick = (noteId: string) => {
     setSelectedNote(noteId);
@@ -122,7 +72,7 @@ const App: React.FC = () => {
 
   // Home Screen
   const HomeScreen = () => (
-    <div className="relative flex flex-col h-full bg-gradient-to-b from-orange-50 via-orange-50 to-green-50">
+    <div className="relative flex flex-col h-full bg-linear-to-b from-orange-50 via-orange-50 to-green-50">
       {/* Header */}
       <div className="px-6 pt-8 pb-6 flex flex-col items-center">
         <h1 className="text-5xl font-serif mb-2">Ingenium</h1>
@@ -301,7 +251,7 @@ const App: React.FC = () => {
 
   // Note View Screen
   const NoteViewScreen = () => (
-    <div className="relative flex flex-col h-full bg-gradient-to-b from-orange-50 via-orange-50 to-green-50">
+    <div className="relative flex flex-col h-full bg-linear-to-b from-orange-50 via-orange-50 to-green-50">
       {/* Header */}
       <div className="px-6 pt-8 pb-4">
         <h1 className="text-5xl font-serif mb-2">Ingenium</h1>
@@ -515,7 +465,7 @@ const App: React.FC = () => {
 
   // Folder Screen
   const FolderScreen = () => (
-    <div className="relative flex flex-col h-full bg-gradient-to-b from-orange-50 via-orange-50 to-green-50">
+    <div className="relative flex flex-col h-full bg-linear-to-b from-orange-50 via-orange-50 to-green-50">
       {/* Header */}
       <div className="px-6 pt-8 pb-6">
         <h1 className="text-5xl font-serif mb-2">Ingenium</h1>

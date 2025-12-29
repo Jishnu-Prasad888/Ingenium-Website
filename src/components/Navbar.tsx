@@ -88,7 +88,7 @@ export const Navbar: React.FC = () => {
 
                   {/* Active underline */}
                   {isActive && (
-                    <span className="absolute left-3 right-3 -bottom-[6px] h-0.5 bg-orange-600 rounded-full" />
+                    <span className="absolute left-3 right-3 -bottom-1.5 h-0.5 bg-orange-600 rounded-full" />
                   )}
                 </button>
               );
