@@ -137,7 +137,7 @@ const SupportersPage: React.FC = () => {
                 the project.
               </p>
               <a
-                href="https://forms.gle/your-google-form-link"
+                href="https://forms.gle/ZyL12dqcWE8LeR4U8"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="block text-center bg-orange-500 hover:bg-orange-600 text-white font-semibold px-6 py-3 rounded-xl shadow-md transition"
