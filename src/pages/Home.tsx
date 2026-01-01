@@ -2,6 +2,7 @@ import { useState } from "react";
 import { FolderOpen, Edit, Shield, ArrowRight, Download } from "lucide-react";
 import DownloadModal from "../components/DownloadModal";
 import { images } from "../utils/images";
+import { links } from "../data/pageData";
 
 const HomePage = () => {
   const [isDownloadModalOpen, setDownloadModalOpen] = useState(false);
@@ -33,8 +34,6 @@ const HomePage = () => {
       color: "from-[#D97F3C] to-[#FF8C42]",
     },
   ];
-
-  const ctaFeatures = ["No subscriptions", "No data collection", "No ads"];
 
   return (
     <>
@@ -128,7 +127,7 @@ const HomePage = () => {
               </button>
               <button className="w-full sm:w-auto bg-white text-[#5C4033] border-2 border-[#EED6C4] px-6 py-3 sm:px-8 sm:py-4 rounded-xl font-semibold text-base sm:text-lg hover:bg-[#F4E1D2] transition-colors">
                 <a
-                  href="https://forms.gle/gAqu4CUc4VXqMaWG6"
+                  href={links.shareFeedback.link}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="block"
@@ -310,18 +309,6 @@ const HomePage = () => {
               <p className="text-base sm:text-lg md:text-xl text-white/80 mb-6 sm:mb-8">
                 Get started here
               </p>
-
-              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4 mb-6 sm:mb-8">
-                {ctaFeatures.map((feature) => (
-                  <div
-                    key={feature}
-                    className="flex items-center justify-center sm:justify-start space-x-2"
-                  >
-                    <div className="w-2 h-2 rounded-full bg-[#FF8C42] flex-shrink-0"></div>
-                    <span className="text-sm sm:text-base">{feature}</span>
-                  </div>
-                ))}
-              </div>
 
               <button
                 className="group w-full sm:w-auto bg-linear-to-r from-[#FF8C42] to-[#D97F3C] text-white px-6 sm:px-8 lg:px-12 py-3 sm:py-4 rounded-xl font-semibold text-base sm:text-lg flex items-center justify-center space-x-2 mx-auto hover:shadow-2xl hover:scale-105 transition-all"

@@ -467,7 +467,7 @@ const App: React.FC = () => {
   const FolderScreen = () => (
     <div className="relative flex flex-col h-full bg-linear-to-b from-orange-50 via-orange-50 to-green-50">
       {/* Header */}
-      <div className="px-6 pt-8 pb-6">
+      <div className="px-6 pt-8 pb-6 text-center">
         <h1 className="text-5xl font-serif mb-2">Ingenium</h1>
         <p className="text-sm text-gray-600 tracking-wide">
           Harmonising Imagination and Structure

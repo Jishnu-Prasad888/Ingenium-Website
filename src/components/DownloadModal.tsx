@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { ExternalLink, Download, CheckCircle, X } from "lucide-react";
 import { images } from "../utils/images";
+import { links } from "../data/pageData";
 
 interface DownloadModalProps {
   isOpen: boolean;
@@ -81,10 +82,7 @@ export default function DownloadModal({
               className="flex w-full items-center justify-center gap-2 rounded-lg bg-gray-900 px-4 py-3 text-sm font-medium text-white hover:bg-gray-800 transition"
             >
               <Download size={18} />
-              <a
-                href="https://github.com/Jishnu-Prasad888/Ingenium/releases/tag/v1.0.0"
-                target="_blank"
-              >
+              <a href={links.latestDownload.link} target="_blank">
                 Continue to download
               </a>
             </button>
@@ -106,7 +104,7 @@ export default function DownloadModal({
             </p>
 
             <a
-              href="https://forms.gle/gAqu4CUc4VXqMaWG6"
+              href={links.shareFeedback.link}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 rounded-lg border px-4 py-2 text-sm font-medium text-gray-800 hover:bg-gray-50 transition"
