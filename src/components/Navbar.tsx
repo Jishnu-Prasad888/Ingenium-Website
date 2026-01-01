@@ -1,20 +1,12 @@
 // components/Navbar.tsx
 import React from "react";
 import { useNav } from "../context/NavBarContext";
-import { useNavigate, useLocation } from "react-router-dom";
-import {
-  ArchiveIcon,
-  HomeIcon,
-  Compass,
-  HeartIcon,
-  ArrowLeft,
-} from "lucide-react";
+import { useNavigate } from "react-router-dom";
+import { ArchiveIcon, HomeIcon, Compass, HeartIcon } from "lucide-react";
 
 export const Navbar: React.FC = () => {
-  const { activeTab, setActiveTab, goBack } = useNav();
+  const { activeTab, setActiveTab } = useNav();
   const navigate = useNavigate();
-  const location = useLocation();
-
   const mainTabs = [
     { id: "Archive", label: "Archive", icon: ArchiveIcon, path: "/archive" },
     { id: "Home", label: "Home", icon: HomeIcon, path: "/home" },
@@ -27,34 +19,15 @@ export const Navbar: React.FC = () => {
     },
   ] as const;
 
-  const isMainTab = mainTabs.some((tab) => tab.path === location.pathname);
-
   const handleTabClick = (tabId: string, path: string) => {
     setActiveTab(tabId as any);
     navigate(path);
-  };
-
-  const handleGoBack = () => {
-    goBack();
-    navigate(-1);
   };
 
   return (
     <nav className="sticky top-0 z-50 bg-[#FAF6F2] border-b border-orange-200/50">
       <div className="mx-auto max-w-7xl px-4">
         <div className="flex items-center h-14 gap-2">
-          {/* Back button */}
-          {!isMainTab && (
-            <button
-              onClick={handleGoBack}
-              className="flex items-center justify-center w-9 h-9 rounded-md
-                     text-orange-700 hover:text-orange-800
-                     hover:bg-orange-100/60 transition"
-            >
-              <ArrowLeft className="w-4 h-4" />
-            </button>
-          )}
-
           {/* Tabs */}
           <div className="flex flex-1 items-center justify-center gap-1">
             {mainTabs.map((item) => {
